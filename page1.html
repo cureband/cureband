@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html >
 <head>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/data.js"></script>
+  <script src="https://code.highcharts.com/modules/drilldown.js"></script>
   <!-- Site made with Mobirise Website Builder v4.8.0, https://mobirise.com -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -61,8 +64,27 @@
     <div class="container">
         <div class="media-container-row">
             <div class="col-md-8">
-                <div class="google-map"><iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0Dx_boXQiwvdz8sJHoYeZNVTdoWONYkU&amp;q=place_id:ChIJn6wOs6lZwokRLKy1iqRcoKw" allowfullscreen=""></iframe></div>
-        </div>
+                <div class="google-map"><div id="containerofgraph" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+  <script>
+    Sheetsu.read("https://sheetsu.com/apis/v1.0/020b2c0f/", {}).then(successFunc);
+
+    function successFunc(data) {
+      Highcharts.chart("containerofgraph", {
+        chart: { type: "column" },
+        title: { text: "Family Guy Score" },
+        series: [
+          {
+            colorByPoint: true,
+            data: data.map(function(item) {
+              return { name: item.name, y: parseInt(item.score, 10) };
+            })
+          }
+        ]
+      });
+    }
+  </script>
+      </div>
     </div>
 </div></section>
 
