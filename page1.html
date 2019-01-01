@@ -56,6 +56,26 @@
         </div>
     </nav>
 </section>
+  <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+  <script>
+    Sheetsu.read("https://sheetsu.com/apis/v1.0/020b2c0f/", {}).then(successFunc);
+
+    function successFunc(data) {
+      Highcharts.chart("container", {
+        chart: { type: "column" },
+        title: { text: "Family Guy Score" },
+        series: [
+          {
+            colorByPoint: true,
+            data: data.map(function(item) {
+              return { name: item.name, y: parseInt(item.score, 10) };
+            })
+          }
+        ]
+      });
+    }
+  </script>
 
 
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
