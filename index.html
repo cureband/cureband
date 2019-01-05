@@ -143,7 +143,7 @@
     // Iterate over them and add each element as a list element
     function successFunc(data) {
       data.forEach(function(item, i) {
-        document.getElementById("list").innerHTML += "<strong>"+item.BPM+"</strong>"+" bpm";
+        document.getElementById("list").innerHTML += "<strong>"+item.CurrentHR+"</strong>"+" bpm";
       });
     }
 
@@ -151,7 +151,7 @@
       console.log(e);
     }
 
-    Sheetsu.read("https://sheetsu.com/apis/v1.0su/67d4653c424a/?limit=1", {}).then(successFunc, errorFunc);
+    Sheetsu.read("https://sheetsu.com/apis/v1.0bu/3ea40961b7bb/sheets/Final/?limit=1", {}).then(successFunc, errorFunc);
   </script>
   
   
