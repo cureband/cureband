@@ -16,9 +16,7 @@
 
 <body>
 
-  <div class="form-group pull-right">
-    <input type="text" class="search form-control" placeholder="What you looking for?">
-</div>
+  
 <span class="counter pull-right"></span>
 <table class="table table-hover table-bordered results">
   <thead>
@@ -43,7 +41,7 @@
     // Iterate over them and add each element as a list element
     function successFunc(data) {
       data.forEach(function(item, i) {
-        document.getElementById("maintable").innerHTML += "<td>" + item.Name + "</td><td> " + item.Email + "</td>";
+        document.getElementById("maintable").innerHTML += "<td>" + item.TIMEPASTHOUR + "</td><td> " + item.BPMPASTHOUR + "</td>";
       });
     }
 
@@ -51,7 +49,7 @@
       console.log(e);
     }
 
-    Sheetsu.read("https://sheetsu.com/apis/v1.0bu/33228025f2aa", {}).then(successFunc, errorFunc);
+    Sheetsu.read("https://sheetsu.com/apis/v1.0bu/67d4653c424a", {}).then(successFunc, errorFunc);
   </script>
   
 
