@@ -18,6 +18,8 @@
   </author>
 
   <icon src="icon.png" />
+ 
+    meta http-equiv="Content-Security-Policy" content="default-src 'self'; frame-src 'self' https://iframe url">
   
 
 </widget>
